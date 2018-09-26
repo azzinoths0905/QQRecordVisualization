@@ -7,4 +7,4 @@ class WordCloudApi(Resource):
     def get():
         param = reqparse.request.args
         wc = WordCloud(param["file"])
-        return wc.process()
+        return wc.process(), 200, {"Access-Control-Allow-Origin": "*"}
