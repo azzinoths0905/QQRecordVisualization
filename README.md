@@ -6,7 +6,9 @@ QQRecordVisualization可以接收用户的QQ聊天记录文件，将其解析为
 目前支持的可视化类型有：
 - 词云（Word Cloud）
 
-本项目的Github地址为：[https://github.com/Azzinothz/QQRecordVisualization](https://github.com/Azzinothz/QQRecordVisualization)
+本项目后端的Github地址为：[https://github.com/Azzinothz/QQRecordVisualization](https://github.com/Azzinothz/QQRecordVisualization)
+
+本项目前端的Github地址为：[https://github.com/Azzinothz/QQRecordVisualization-FrontEnd](https://github.com/Azzinothz/QQRecordVisualization-FrontEnd)
 
 ## 2. 安装方法
 >请确保Python版本>=3.4
