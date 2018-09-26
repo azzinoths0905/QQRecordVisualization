@@ -1,5 +1,5 @@
 from flask_restful import Resource, reqparse
-from wordCloud import WordCloud
+from .wordCloud import WordCloud
 
 
 class WordCloudApi(Resource):

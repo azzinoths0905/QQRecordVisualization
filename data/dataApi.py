@@ -1,5 +1,5 @@
 from flask_restful import Resource, reqparse
-from reader import Reader
+from data.data import Data
 
 
 class DataApi(Resource):
@@ -8,7 +8,7 @@ class DataApi(Resource):
         result = {"error": ""}
         try:
             param = reqparse.request.json()
-            reader = Reader(param["file"])
+            reader = Data(param["file"])
             reader.parse()
             result.update(reader.commit(param["table"]))
         except Exception as e:

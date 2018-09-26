@@ -1,7 +1,7 @@
-from .data import Data
+from database.database import DataBase
 
 
-class ChatLog(Data):
+class ChatLog(DataBase):
     def __init__(self, file):
         """
         Control the chat_log table

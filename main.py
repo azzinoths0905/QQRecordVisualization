@@ -1,6 +1,6 @@
 from flask import Flask, request, Response
 from flask_restful import Api
-from reader import Reader
+from data.data import Data
 from visualization.wordCloudApi import WordCloudApi
 import time
 
@@ -19,7 +19,7 @@ def upload_file():
         f = request.files["log_file"]
         f_name = f.filename.rstrip(".txt") + str(int(time.time())) + ".txt"
         f.save("resource/" + f_name)
-        reader = Reader("resource/" + f_name)
+        reader = Data("resource/" + f_name)
         reader.parse()
         result = reader.commit(f_name)
         if result["import"] > 0:

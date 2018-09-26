@@ -1,5 +1,5 @@
-HOST = ""
-USER = ""
-PASSWORD = ""
-DB = ""
-PORT = 3306
+HOST = ""   # type: str
+USER = ""   # type: str
+PASSWORD = ""   # type: str
+DB = ""   # type: str
+PORT = 3306   # type: int

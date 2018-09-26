@@ -2,14 +2,21 @@ import re
 from database.chatLog import ChatLog
 
 
-class Reader(object):
+class Data(object):
     def __init__(self, file):
+        """
+        Deal with the uploaded file
+        :param file: The file name
+        """
         self.__f = open(file, "r", encoding="UTF-8")
         self.__lines = self.__f.readlines()
         self.__logs = []
         self.__failed_logs = []
 
     def parse(self):
+        """
+        Parse the data into structured data
+        """
         i = 0
         while i < len(self.__lines):
             line = self.__lines[i]
@@ -32,8 +39,13 @@ class Reader(object):
             self.__logs.append(log)
             i += 2
 
-    def commit(self, table) -> dict:
-        cl = ChatLog(table)
+    def commit(self, file) -> dict:
+        """
+        Commit the parsed data into db
+        :param file: The stored file name
+        :return: The number of successfully imported logs and the opposite
+        """
+        cl = ChatLog(file)
         for log in self.__logs:
             cl.log = log
             result = cl.create()

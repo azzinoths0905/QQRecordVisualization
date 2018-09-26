@@ -3,6 +3,10 @@ from visualization.visualization import Visualization
 
 class WordCloud(Visualization):
     def __init__(self, file):
+        """
+        Generate a Word Cloud option
+        :param file:
+        """
         super().__init__(file)
 
     def _get_data(self) -> dict:

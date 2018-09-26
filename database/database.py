@@ -2,7 +2,7 @@ import pymysql
 import config
 
 
-class Data(object):
+class DataBase(object):
     def __init__(self, file):
         """
         control the data model
@@ -36,6 +36,10 @@ class Data(object):
         raise PermissionError
 
     def delete_all(self) -> dict:
+        """
+        Empty the data table
+        :return: the number of deleted rows
+        """
         with self._connection.cursor() as cursor:
             sql = "TRUNCATE TABLE `chat_log`"
             aff_row = cursor.execute(sql)
@@ -45,6 +49,11 @@ class Data(object):
         }
 
     def exc_sql(self, sql):
+        """
+        Execute the given SQL query
+        :param sql: SQL query
+        :return: The number of affected rows, the selected rows and the error message
+        """
         with self._connection.cursor() as cursor:
             aff_row = 0
             logs_info = []
