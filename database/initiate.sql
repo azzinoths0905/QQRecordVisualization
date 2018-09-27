@@ -1,4 +1,4 @@
-CREATE TABLE char_log
+CREATE TABLE chat_log
 (
     id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name varchar(20),
